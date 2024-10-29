@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const messages = await response.json();
             messagesContainer.innerHTML = messages.map(msg => `
                 <div class="message">
+                    <img src="data:image/jpeg;base64,${msg.image}" style='height: 100%; width: 100%; object-fit: contain'/>
                     <h3>${msg.name}</h3>
                     <p>${msg.message}</p>
                     <small>${msg.created_at}</small>
